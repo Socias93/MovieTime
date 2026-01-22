@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
 import "./App.css";
+import { getCategories } from "./services/MovieService";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    getCategories().then(setMovies);
+  }, []);
+
   return (
     <>
       <table className="table">
@@ -13,24 +21,14 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>John</td>
-            <td>Doe</td>
-            <td>@social</td>
-          </tr>
+          {movies.map((movie, index) => (
+            <tr key={movie.id}>
+              <td>{index + 1}</td>
+              <td>{movie.title}</td>
+              <td>{movie.release_date}</td>
+              <td>{movie.id}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

@@ -1,3 +1,13 @@
-export function getCategories() {
-  return "https://api.themoviedb.org/3/";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
+
+export async function getCategories() {
+  try {
+    const res = await fetch(BASE_URL);
+    const data = await res.json();
+    return data.results; // <-- viktigt! bara själva arrayen med filmer
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
 }
