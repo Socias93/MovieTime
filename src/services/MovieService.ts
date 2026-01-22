@@ -1,6 +1,15 @@
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
 
+export interface Movies {
+  id: string;
+  title: string;
+  release_date: string;
+  popularity: number;
+  vote_average: number;
+  vote_count: number;
+}
+
 export async function getCategories() {
   try {
     const res = await fetch(BASE_URL);

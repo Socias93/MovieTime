@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { getCategories } from "./services/MovieService";
+import { getCategories, Movies } from "./services/MovieService";
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movies[]>([]);
 
   useEffect(() => {
     getCategories().then(setMovies);
@@ -14,19 +14,17 @@ function App() {
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
+            <th scope="col">Title</th>
+            <th scope="col"></th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
           </tr>
         </thead>
         <tbody>
-          {movies.map((movie, index) => (
+          {movies.map((movie) => (
             <tr key={movie.id}>
-              <td>{index + 1}</td>
               <td>{movie.title}</td>
               <td>{movie.release_date}</td>
-              <td>{movie.id}</td>
             </tr>
           ))}
         </tbody>
