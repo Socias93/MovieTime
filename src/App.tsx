@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-import { getCategories, Movies } from "./services/movieService";
 import "./App.css";
-import Popular from "./components/Popular";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  const [movies, setMovies] = useState<Movies[]>([]);
-
-  useEffect(() => {
-    getCategories().then(setMovies);
-  }, []);
-
-  return <Popular movies={movies} />;
+  return <HomePage />;
 }
 
 export default App;
