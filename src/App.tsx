@@ -11,32 +11,30 @@ function App() {
 
   return (
     <>
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Popularity</th>
-            <th scope="col">Released</th>
-            <th scope="col">Raiting</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="container py-4">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
           {movies.map((movie) => (
-            <tr key={movie.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.poster_path}
-              />
-              <td>{movie.title}</td>
-              <td>{movie.popularity.toFixed()} / 900</td>
-              <td>{movie.release_date} </td>
-              <td>
-                {movie.vote_average} / 10 ({movie.vote_count} votes)
-              </td>
-            </tr>
+            <div key={movie.id} className="col">
+              <div className="card h-100 shadow-sm border-0 rounded-4">
+                <h5 className="card-title text-center">{movie.title}</h5>
+
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <p className="card-text">
+                    Popularity: {movie.popularity.toFixed()} <br />
+                    Released: {movie.release_date} <br />
+                    Rating: {movie.vote_average} / 10 ({movie.vote_count} votes)
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </>
   );
 }
