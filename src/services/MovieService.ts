@@ -4,6 +4,7 @@ const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
 export interface Movies {
   id: string;
   title: string;
+  poster_path: string;
   release_date: string;
   popularity: number;
   vote_average: number;

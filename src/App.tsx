@@ -23,6 +23,10 @@ function App() {
         <tbody>
           {movies.map((movie) => (
             <tr key={movie.id}>
+              <img
+                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                alt={movie.poster_path}
+              />
               <td>{movie.title}</td>
               <td>{movie.popularity.toFixed()} / 900</td>
               <td>{movie.release_date} </td>
