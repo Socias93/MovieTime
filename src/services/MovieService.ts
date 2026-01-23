@@ -15,7 +15,7 @@ export async function getCategories() {
   try {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    return data.results; // <-- viktigt! bara själva arrayen med filmer
+    return data.results;
   } catch (err) {
     console.error(err);
     return [];

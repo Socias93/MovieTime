@@ -9,22 +9,22 @@ function Carousel() {
           <img
             src="public/images/movie3.jpg"
             className="d-block w-100 carousel-img"
-            alt="..."
+            alt="image1"
           />
         </div>
         <div className="carousel-item">
           <img
             src="public/images/movie2.jpg"
             className="d-block w-100 carousel-img"
-            alt="..."
-          />{" "}
+            alt="image2"
+          />
         </div>
         <div className="carousel-item">
           <img
             src="public/images/movie1.jpg"
             className="d-block w-100 carousel-img"
-            alt="..."
-          />{" "}
+            alt="image3"
+          />
         </div>
       </div>
     </div>

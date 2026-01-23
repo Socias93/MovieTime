@@ -23,12 +23,12 @@
 }
 
 .carousel-item {
-  height: 450px; /* välj höjd du vill ha */
+  height: 450px;
 }
 
 .carousel-img {
   height: 100%;
   width: 100%;
-  object-fit: unset; /* <-- HELA bilden syns */
-  background-color: #000; /* snyggt istället för tom yta */
+  object-fit: unset;
+  background-color: #000;
 }
