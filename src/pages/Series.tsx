@@ -10,7 +10,7 @@ function SeriesPage() {
 
   return (
     <>
-      <div className="serie-scroll-container row justify-content-center">
+      <div className="serie-scroll-container mt-3 mb-3">
         {series.map((serie) => (
           <div key={serie.id} className="serie-card">
             <img
@@ -18,8 +18,8 @@ function SeriesPage() {
               className="card-img-top"
               alt={serie.name}
             />
-            <div className="serie-card">
-              <h5 className="card-title">{serie.name} </h5>
+            <div className="serie-info">
+              <h5 className="serie-title">{serie.name} </h5>
               <p>{serie.genres.map((g) => g.name).join(" • ")}</p>
             </div>
           </div>
