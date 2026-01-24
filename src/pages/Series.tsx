@@ -10,14 +10,22 @@ function SeriesPage() {
 
   return (
     <>
-      <h1>
+      <div className="serie-scroll-container">
         {series.map((serie) => (
-          <ul key={serie.id}>
-            <li> {serie.name} </li>
-            <li>{serie.origin_country} </li>
-          </ul>
+          <div key={serie.id} className="serie-card">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
+              className="card-img-top"
+              alt={serie.name}
+            />
+            <div className="serie-card">
+              <h5 className="card-title">{serie.name} </h5>
+              <p> </p>
+              <span className="card-text">{serie.origin_country}</span>
+            </div>
+          </div>
         ))}
-      </h1>
+      </div>
     </>
   );
 }
