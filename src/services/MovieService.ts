@@ -11,7 +11,7 @@ export interface Movies {
   vote_count: number;
 }
 
-export async function getCategories() {
+export async function getPopularMovies() {
   try {
     const res = await fetch(BASE_URL);
     const data = await res.json();
