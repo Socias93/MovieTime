@@ -1,8 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand">MyMovies</a>
+        <NavLink to={"/"} className="navbar-brand">
+          MyMovies
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -16,32 +20,15 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page">
+              <NavLink to={"/"} className="nav-link active" aria-current="page">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Link</a>
+              <a className="nav-link">Series</a>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item">Action</a>
-                </li>
-                <li>
-                  <a className="dropdown-item">Another action</a>
-                </li>
-                <li>
-                  <a className="dropdown-item">Something else here</a>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <a className="nav-link">Actors</a>
             </li>
           </ul>
           <form className="d-flex" role="search">
