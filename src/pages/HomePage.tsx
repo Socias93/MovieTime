@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCategories, Movies } from "../services/movieService";
 import Popular from "../components/Popular";
-import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 
 function HomePage() {
@@ -12,7 +11,6 @@ function HomePage() {
   }, []);
   return (
     <>
-      <Navbar />
       <Popular movies={movies} />
       <Carousel />
     </>
