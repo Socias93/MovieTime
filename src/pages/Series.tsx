@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
-import { getPopularSeries } from "../services/serieService";
+import { getPopularSeries, Series } from "../services/serieService";
 
-function Series() {
-  const [series, setSeries] = useState([]);
+function SeriesPage() {
+  const [series, setSeries] = useState<Series[]>([]);
 
   useEffect(() => {
     getPopularSeries().then(setSeries);
   }, []);
+
   return (
-    <h1>
-      <ul>
+    <>
+      <h1>
         {series.map((serie) => (
-          <li key={serie.id}> {serie.name} </li>
+          <ul key={serie.id}>
+            <li> {serie.name} </li>
+            <li>{serie.origin_country} </li>
+          </ul>
         ))}
-      </ul>
-    </h1>
+      </h1>
+    </>
   );
 }
 
-export default Series;
+export default SeriesPage;
