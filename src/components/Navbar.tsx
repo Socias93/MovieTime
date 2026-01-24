@@ -25,10 +25,14 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Series</a>
+              <NavLink to={"series"} className="nav-link">
+                Series
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link">Actors</a>
+              <NavLink to={"actors"} className="nav-link">
+                Actors
+              </NavLink>
             </li>
           </ul>
           <form className="d-flex" role="search">
