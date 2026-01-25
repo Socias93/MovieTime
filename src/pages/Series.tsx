@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPopularSeries, Series } from "../services/serieService";
+import Pagination from "../components/Pagination";
 
 function SeriesPage() {
   const [series, setSeries] = useState<Series[]>([]);
@@ -27,6 +28,9 @@ function SeriesPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="d-flex justify-content-center mt-3">
+        <Pagination />
       </div>
     </>
   );
