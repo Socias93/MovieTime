@@ -4,11 +4,7 @@ function Pagination() {
 
   const pageCount = Math.ceil(totalCount / pageSize);
 
-  let pages: number[] = [];
-
-  for (let x = 1; x <= pageCount; x++) {
-    pages.push(x);
-  }
+  let pages = range(1, pageCount);
 
   return (
     <nav aria-label="Page navigation example">
@@ -34,6 +30,15 @@ function Pagination() {
       </ul>
     </nav>
   );
+}
+
+export function range(startNumber: number, endNumber: number): number[] {
+  let pages: number[] = [];
+
+  for (let x = startNumber; x <= endNumber; x++) {
+    pages.push(x);
+  }
+  return pages;
 }
 
 export default Pagination;
