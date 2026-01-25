@@ -28,8 +28,9 @@ function Pagination({
         {pages.map((page) => (
           <li className="page-item">
             <a
+              onClick={() => setSelectedPage(page)}
               key={page + 1}
-              className={`page-link ${page === selectedPage ? "active" : ""}`}>
+              className={`clickable page-link ${page === selectedPage ? "active" : ""}`}>
               {page}
             </a>
           </li>

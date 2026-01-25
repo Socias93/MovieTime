@@ -73,3 +73,7 @@
   object-fit: unset;
   background-color: #000;
 }
+
+.clickable {
+  cursor: pointer;
+}
