@@ -19,9 +19,15 @@ function Pagination({
 
   return (
     <nav aria-label="Page navigation example">
-      <ul className="pagination">
+      <ul
+        className="pagination"
+        style={{
+          border: " solid #333",
+          borderRadius: "8px",
+          boxShadow: "none",
+        }}>
         <li className="page-item">
-          <a className="page-link" aria-label="Previous">
+          <a className="page-link text-dark" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
@@ -30,14 +36,14 @@ function Pagination({
             <a
               onClick={() => setSelectedPage(page)}
               key={page + 1}
-              className={`clickable page-link ${page === selectedPage ? "active" : ""}`}>
+              className={`clickable page-link ${page === selectedPage ? "bg-dark text-white" : "bg-white text-dark"}`}>
               {page}
             </a>
           </li>
         ))}
 
         <li className="page-item">
-          <a className="page-link" aria-label="Next">
+          <a className="page-link text-dark" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
