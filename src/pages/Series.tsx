@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { getPopularSeries, Series } from "../services/serieService";
 import Pagination from "../components/Pagination";
 
+const PAGE_SIZE = 8;
+
 function SeriesPage() {
   const [series, setSeries] = useState<Series[]>([]);
 
@@ -30,7 +32,7 @@ function SeriesPage() {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <Pagination pageSize={8} totalCount={series.length} />
+        <Pagination pageSize={PAGE_SIZE} totalCount={series.length} />
       </div>
     </>
   );
