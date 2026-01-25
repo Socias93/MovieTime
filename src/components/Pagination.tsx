@@ -1,9 +1,11 @@
 import { range } from "./utils";
 
-function Pagination() {
-  const pageSize = 8;
-  const totalCount = 20;
+interface Props {
+  pageSize: number;
+  totalCount: number;
+}
 
+function Pagination({ pageSize, totalCount }: Props) {
   const pageCount = Math.ceil(totalCount / pageSize);
 
   let pages = range(1, pageCount);

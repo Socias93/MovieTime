@@ -30,7 +30,7 @@ function SeriesPage() {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <Pagination />
+        <Pagination pageSize={8} totalCount={series.length} />
       </div>
     </>
   );
