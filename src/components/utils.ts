@@ -15,5 +15,5 @@ export function paginate<T>(
   const startNumber = pageSize * (selectedPage - 1);
   const endNumber = pageSize * selectedPage;
 
-  return items.splice(startNumber, endNumber);
+  return items.slice(startNumber, endNumber);
 }

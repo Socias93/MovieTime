@@ -32,10 +32,9 @@ function Pagination({
           </a>
         </li>
         {pages.map((page) => (
-          <li className="page-item">
+          <li key={page + 1} className="page-item">
             <a
               onClick={() => setSelectedPage(page)}
-              key={page + 1}
               className={`clickable page-link ${page === selectedPage ? "bg-dark text-white" : "bg-white text-dark"}`}>
               {page}
             </a>

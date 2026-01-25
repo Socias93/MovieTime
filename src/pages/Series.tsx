@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPopularSeries, Series } from "../services/serieService";
 import Pagination from "../components/Pagination";
+import { paginate } from "../components/utils";
 
 const PAGE_SIZE = 8;
 
@@ -12,13 +13,15 @@ function SeriesPage() {
     getPopularSeries().then(setSeries);
   }, []);
 
+  const paginatedSeries = paginate(series, PAGE_SIZE, selectedPage);
+
   return (
     <>
       <h1 className="d-flex justify-content-center m-4">
         Popular Series right now
       </h1>
       <div className="serie-scroll-container mt-3 mb-3">
-        {series.map((serie) => (
+        {paginatedSeries.map((serie) => (
           <div key={serie.id} className="serie-card">
             <img
               src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
