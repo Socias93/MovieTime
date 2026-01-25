@@ -1,4 +1,15 @@
 function Pagination() {
+  const pageSize = 8;
+  const totalCount = 20;
+
+  const pageCount = Math.ceil(totalCount / pageSize);
+
+  let pages: number[] = [];
+
+  for (let x = 1; x <= pageCount; x++) {
+    pages.push(x);
+  }
+
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
@@ -7,21 +18,14 @@ function Pagination() {
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            1
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            2
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            3
-          </a>
-        </li>
+        {pages.map((page) => (
+          <li className="page-item">
+            <a key={page + 1} className="page-link" href="#">
+              {page}
+            </a>
+          </li>
+        ))}
+
         <li className="page-item">
           <a className="page-link" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
