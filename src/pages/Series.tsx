@@ -6,6 +6,7 @@ const PAGE_SIZE = 8;
 
 function SeriesPage() {
   const [series, setSeries] = useState<Series[]>([]);
+  const [selectedPage, setSelectedPage] = useState(1);
 
   useEffect(() => {
     getPopularSeries().then(setSeries);
@@ -32,7 +33,12 @@ function SeriesPage() {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <Pagination pageSize={PAGE_SIZE} totalCount={series.length} />
+        <Pagination
+          pageSize={PAGE_SIZE}
+          totalCount={series.length}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </div>
     </>
   );
