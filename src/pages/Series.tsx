@@ -10,6 +10,9 @@ function SeriesPage() {
 
   return (
     <>
+      <h1 className="d-flex justify-content-center m-4">
+        Popular Series right now
+      </h1>
       <div className="serie-scroll-container mt-3 mb-3">
         {series.map((serie) => (
           <div key={serie.id} className="serie-card">
