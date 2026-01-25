@@ -1,3 +1,5 @@
+import { range } from "./utils";
+
 function Pagination() {
   const pageSize = 8;
   const totalCount = 20;
@@ -30,15 +32,6 @@ function Pagination() {
       </ul>
     </nav>
   );
-}
-
-export function range(startNumber: number, endNumber: number): number[] {
-  let pages: number[] = [];
-
-  for (let x = startNumber; x <= endNumber; x++) {
-    pages.push(x);
-  }
-  return pages;
 }
 
 export default Pagination;
