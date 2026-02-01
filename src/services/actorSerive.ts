@@ -7,3 +7,13 @@ export interface Actor {
   gender: number;
   known_for_department: string;
 }
+
+export async function getPopularActors() {
+  try {
+    const res = await fetch(BASE_URL);
+    const data = await res.json();
+    return data.results;
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
