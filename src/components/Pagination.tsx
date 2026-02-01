@@ -43,7 +43,9 @@ function Pagination({
           </li>
         ))}
 
-        <li className="page-item">
+        <li
+          className="clickable page-item"
+          onClick={() => setSelectedPage(selectedPage + 1)}>
           <a className="page-link text-dark" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
