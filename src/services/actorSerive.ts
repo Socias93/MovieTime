@@ -7,6 +7,7 @@ export interface Actor {
   name: string;
   gender: number;
   known_for_department: string;
+  profile_path: string;
 }
 
 export async function getPopularActors() {

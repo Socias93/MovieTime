@@ -10,7 +10,13 @@ function ActorsPage() {
   return (
     <ul>
       {actors.map((actor) => (
-        <li key={actor.id}> {actor.name} </li>
+        <div key={actor.id}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+            alt={actor.profile_path}
+          />
+          <li> {actor.name} </li>
+        </div>
       ))}
     </ul>
   );
