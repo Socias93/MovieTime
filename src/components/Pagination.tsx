@@ -26,13 +26,15 @@ function Pagination({
           borderRadius: "8px",
           boxShadow: "none",
         }}>
-        <li
-          onClick={() => setSelectedPage(selectedPage - 1)}
-          className="page-item">
-          <a className="page-link text-dark" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
+        {selectedPage > 1 && (
+          <li
+            onClick={() => setSelectedPage(selectedPage - 1)}
+            className="clickable page-item">
+            <button className="page-link text-dark" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </button>
+          </li>
+        )}
         {pages.map((page) => (
           <li key={page + 1} className="page-item">
             <a
@@ -42,14 +44,15 @@ function Pagination({
             </a>
           </li>
         ))}
-
-        <li
-          className="clickable page-item"
-          onClick={() => setSelectedPage(selectedPage + 1)}>
-          <a className="page-link text-dark" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
+        {selectedPage < pageCount && (
+          <li
+            className="clickable page-item"
+            onClick={() => setSelectedPage(selectedPage + 1)}>
+            <a className="page-link text-dark" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        )}
       </ul>
     </nav>
   );
