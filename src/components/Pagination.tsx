@@ -26,7 +26,9 @@ function Pagination({
           borderRadius: "8px",
           boxShadow: "none",
         }}>
-        <li className="page-item">
+        <li
+          onClick={() => setSelectedPage(selectedPage - 1)}
+          className="page-item">
           <a className="page-link text-dark" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
