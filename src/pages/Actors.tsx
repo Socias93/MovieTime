@@ -13,8 +13,13 @@ function ActorsPage() {
     <ul>
       <div className="serie-scroll-container mt-3 mb-3">
         {actors.map((actor) => (
-          <div key={actor.id} className="serie-card">
+          <div
+            key={actor.id}
+            className="serie-card d-flex flex-column justify-content-between"
+            style={{ height: "350px" }}>
             <img
+              className="card-img-top"
+              style={{ maxHeight: "250px" }}
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
@@ -24,9 +29,10 @@ function ActorsPage() {
               }
             />
 
-            <div key={actor.id + 1} className="serie-card">
-              {actor.profile_path === null}
+            <div key={actor.id + 1}>
               <li> {actor.name} </li>
+              <h5>{actor.known_for_department} </h5>
+              <button className="btn btn-outline-dark mb-2">See more</button>
             </div>
           </div>
         ))}
