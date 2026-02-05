@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Actor, getPopularActors } from "../services/actorSerive";
+import { NavLink } from "react-router-dom";
 function ActorsPage() {
   const [actors, setActors] = useState<Actor[]>([]);
 
@@ -32,7 +33,11 @@ function ActorsPage() {
             <div key={actor.id + 1}>
               <li> {actor.name} </li>
               <h5>{actor.known_for_department} </h5>
-              <button className="btn btn-outline-dark mb-2">See more</button>
+              <NavLink
+                to={`/actors/${actor.id}`}
+                className="btn btn-outline-dark mb-2">
+                See more
+              </NavLink>
             </div>
           </div>
         ))}
