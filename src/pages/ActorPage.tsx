@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 function ActorsPrivatePage() {
-  return <h1>ActorsPrivatePage</h1>;
+  const { id } = useParams();
+  return <h1>Actor {id} </h1>;
 }
 
 export default ActorsPrivatePage;
