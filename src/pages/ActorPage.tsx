@@ -1,5 +1,5 @@
-function ActorsPage() {
-  return <h1>ActorsPage</h1>;
+function ActorsPrivatePage() {
+  return <h1>ActorsPrivatePage</h1>;
 }
 
-export default ActorsPage;
+export default ActorsPrivatePage;

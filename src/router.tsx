@@ -3,6 +3,7 @@ import App from "./App";
 import HomePage from "./pages/Home";
 import ActorsPage from "./pages/Actors";
 import SeriesPage from "./pages/Series";
+import ActorsPrivatePage from "./pages/ActorPage";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       },
       { path: "series", element: <SeriesPage /> },
       { path: "actors", element: <ActorsPage /> },
+      { path: "actors/:id", element: <ActorsPrivatePage /> },
     ],
   },
 ]);
