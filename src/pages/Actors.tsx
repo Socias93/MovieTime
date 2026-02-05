@@ -7,6 +7,8 @@ function ActorsPage() {
     getPopularActors().then(setActors);
   }, []);
 
+  console.log(actors);
+
   return (
     <ul>
       <div className="serie-scroll-container mt-3 mb-3">
@@ -16,7 +18,9 @@ function ActorsPage() {
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
-                  : "/public/images/user.jpg"
+                  : actor.gender === 0
+                    ? "/public/images/female_user.jpg"
+                    : "/public/images/male_user.png"
               }
             />
 
